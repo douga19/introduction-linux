@@ -7,6 +7,15 @@ edit_uri: ""
 extra_css:
   - assets/stylesheets/extra.css
 
+extra:
+  alternate:
+    - name: English
+      link: /en/ 
+      lang: en
+    - name: Français
+      link: /fr/
+      lang: fr
+
 theme:
   name: material
   favicon: assets/img/favicon.png
