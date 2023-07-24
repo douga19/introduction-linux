@@ -10,4 +10,4 @@ Rub butt on table catch mouse and gave it as a present. Pose purrfectly to show 
 
 ## Course contents
 1. [Preliminary reading](./contents/preliminary-reading.md)
-
+2. [TP1 - First commands](./contents/tp1.md)
