@@ -37,8 +37,9 @@ title: TP1 - First commands
 ## Exercise 2 : Directories and files
 
 1. Open a terminal and type the following command, respecting its syntax:
-
-        $ PS1='$ '
+```bash
+PS1 = '$ '
+```
 2. Type the command `pwd` (for *print working directory*), that is, display the name of the current directory) and note what is printed on the screen: it is the absolute path of your *home*, personal directory.
 3. Type the command `cd ..` (with a space between `cd` and `..`) and then `pwd`. Repeat these two commands several times until the result remains the same. What happened ?
 4. Type the command `cd` (without argument), then `pwd`. Comment.
@@ -77,12 +78,13 @@ and then delete the subdirectory `tp1` from the directory `tp_shell`.
 
         $ touch ~/arbres/hello.c abeilles/truc.txt bidule
     
-    by typing
+by typing
     
         $ ls ~/arbres abeilles/ .
     
-    !!! note inline end
-        `.` refers to the current directory.
+!!! note inline end
+    
+    `.` refers to the current directory.
 
 9. The `mv` command for *move*, allows you to move or rename files. Observe with `ls` the result of each of the following commands:
         
@@ -101,7 +103,7 @@ and then delete the subdirectory `tp1` from the directory `tp_shell`.
         $ cp vie copie_vie
         $ cp -R vie copie_vie
 
-    Describe the operation of the `cp` command, depending on whether its last argument is an existing directory or not and whether the `-R` option is present or not.        
+Describe the operation of the `cp` command, depending on whether its last argument is an existing directory or not and whether the `-R` option is present or not.        
 
 11. Finally, the `rm` command (for *remove*) allows you to delete files and directories. Observe the result of the following commands:
 
@@ -133,81 +135,50 @@ From your home directory, perform the following operations (there are several po
 
 ## Exercise 5 : Built-in commands
 
-!!! info ""
+!!! info "Internal vs external commands"
 
     Shell commands can be either internal (or primitive) shell commands, shell functions, aliases, or external commands, i.e. compiled programs or scripts installed on the system. 
     
 1. For each command name that appears in the previous exercises, say with the `type` command which category it belongs to (don't forget `type`).
 2. Can you guess which directories contain most of the programs installed on the system ?
 
-!!! info ""
+!!! info "Manual pages"
 
     The `man` command provides help *for external commands*. For `bash` primitives, you can use the `help` command.
 
-## Exercise 6
+## Exercise 6 : Manual pages
 
-1.  *Entrer la commande `ls`. À quoi servent les options `-l` et `-a` ?
-    Taper sur la touche `q` pour sortir de l'aide et les tester.*
-
-2.  *À l'aide du manuel, dire à quoi sert l'option `-f` de la commande
-    `rm` et comment on peut supprimer un fichier dont le nom commence
-    par un tirer (comme par exemple `-f`).*
-
-3.  *À l'aide du manuel, décrire l'utilité de l'option `-k` de la
-    commande `man`. La tester pour lister les navigateurs web installés
-    (et documentés) sur le système.*
-
-4.  *À l'aide de la commande `help`, obtenir de l'aide sur les commandes
-    `echo` et `type` intégrées au shell `bash`.*
-
-5.  *Voir la page de manuel de `touch`. À quoi sert ce programme, si ce
-    n'est à créer des fichiers vides ?*
-
-6.  *Revoir la page de manuel de `man`. Dans quelle section sont les
-    programmes et les commandes du shell ? Dans quelle section sont
-    documentées les bibliothèques (comme la bibliothèque standard du C)
-    ? Expliquer la différence entre les deux commandes suivantes :*
+1. Type the command `ls`. What are the `-l` and `-a` options for ? Press the `q` key to exit the help and test them.
+2. Using the manual, say what the `-f` option of the `rm` command is used for and how you can delete a file whose name starts with a dash (like for example `-f`).
+3. Using the `help` command, print out the help pages for `echo` and `type` built-in commands.
+4. Using the manual on the `touch` command, what is the usefulness of this command if it is not to create empty files ?
+5. Using the manual on `man` command, can you find in which section built-in commands are documented ? Then in which section libraries are documented (for instance C standard library) ? Can you guess the difference between the following commands ?
 
         $ man 1 printf
         $ man 3 printf
 
-7.  *Dans la page de manuel de `mv`, observer les deux premières lignes
-    de la partie `SYNOPSIS`. Que signifient les crochets ? les points de
-    suspension ? Si besoin, se reporter au manuel de `man`.*
-:::
+## Exercise 7 : Wildcards
 
-Pour rappel, les caractères jokers sont seulement :
+Wildcards are characters that are used to represent one or more other characters. They are used to specify patterns in commands.
 
-`*`
+Wildcards are expanded by the shell before the command is executed. The shell replaces the wildcard with the list of files that match the pattern. This is called *pathname expansion*.
 
-:   : correspond à toute chaîne de caractère (éventuellement vide) sauf
-    les chaînes commençant par le caractère `.` dans le cas où `*` est
-    en début de chaîne ;
+There are several types of wildcards, but we will only use the most common ones: `*`, `?` and `[ ]`.
 
-`?`
+* `*` represents all the characters 
+* `?` represents any single character
+* `[]` represents a range of characters
 
-:   : correspond à un caractère quelconque ;
-
-`[ ]`
-
-:   : correspond à un (et un seul) caractère à l'intérieur des crochets.
-    On peut utiliser des intervalles, comme dans `[a-z]` qui correspond
-    à une seule lettre minuscule ou dans `[0-5]` qui correspond à un
-    seul chiffre entre $0$ et $5$. On peut inverser la recherche en
-    faisant commencer l'intervalle par `^` : par exemple `[^0-9]`
-    correspond à un caractère qui est tout sauf un chiffre.
-
-Plus d'information dans `man bash` à la rubrique Développement des
-chemins (*pathname expansion*).
-
-::: exo
-**Exercice 7**. *Créez le répertoire `tp_joker` dans votre répertoire
-personnel. Déplacez-vous dans ce répertoire. Créez les fichiers (vides)
-suivants : `annee1` `Annee2` `annee4` `annee45` `annee41` `annee510`
-`annee_saucisse` `annee_banane` `bonbon`*
-
-1.  *Essayer de prévoir le résultat des commandes suivantes, puis les
-    tester :*
+!!! info "Wildcards"
+    
+    * `*` can represent a possibily empty string of characters, except if it is the first character of the string and the string starts with a dot (`.`) ;
+    
+    * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between $0$ and $5$. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit.
+        
+    * You may get further details in `man bash` at the Pathname Expansion section.
+    
+1. Create the `tp_joker` directory in your home directory. Move to this directory. Create the following (empty) files: `annee1` `Annee2` `annee4` `annee45` `annee41` `annee510` `annee_saucisse` `annee_banane` `bonbon`
+2. Try to predict the result of the following commands, then test them:
 
         $ echo *
         $ echo *_*
@@ -215,31 +186,13 @@ suivants : `annee1` `Annee2` `annee4` `annee45` `annee41` `annee510`
         $ echo [^ab]*
         $ echo c*
         $ echo ??????
-
-2.  *Lister tous les fichiers :*
-
-    1.  *se terminant par `5`*
-
-    2.  *commençant par `annee4` ;*
-
-    3.  *commençant par `annee4` et de 7 lettres maximum ;*
-
-    4.  *commençant par `annee` dont le sixième caractère n'est pas un
-        chiffre ;*
-
-    5.  *contenant la chaîne `ana` ;*
-
-    6.  *commençant par `a` ou `A` ;*
-
-    7.  *dont l'avant-dernier caractère est `4` ou `1` ;*
-
-3.  *Lister les fichiers cachés (c'est-à-dire ceux commençant par le
-    caractère `.`) situés dans votre répertoire personnel.*
-
-4.  *Lister les fichier commençant par `std` et se terminant par `.h`
-    dans le répertoire `/usr/include`.*
-
-5.  *Lister les fichiers se trouvant dans un répertoire
-    arrière-petit-enfant de la racine, commençant par une lettre `w`
-    majuscule ou minuscule et se terminant par `.h`.*
-:::
+3. Using the `ls` command, list all the files that:
+    a. ends with `5`
+    b. starts with `annee4`
+    c. starts with `annee4` and has a maximum of 7 letters
+    d. starts with `annee` and whose sixth character is not a digit
+    e. contains the string `ana`
+    f. starts with `a` or `A`
+    g. whose penultimate character is `4` or `1`
+4. List all the hidden files in your home directory (files whose name starts with a dot).
+5. List all the files starting with `std` and ending with `.h` in the `/usr/include` directory and its subdirectories.
