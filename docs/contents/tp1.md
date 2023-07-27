@@ -24,7 +24,7 @@ title: TP1 - First commands
     -   `uname -m -r`
     -   `uname -mrs`
     -   `echo Hello, world!`
-    -   `echo \ \ \ \Hello,        world!`
+    -   `echo       Hello,        world!`
 2. Press on the right arrow key of your keyboard or `C-p` (the `Ctrl` key at the same time as the `p` key) several times, until the command `who` is displayed. Now press the down arrow key or type `C-n` until the command `uname -m -r` is displayed and then press enter. Note what these shortcuts are for and learn them.
 3. Press `C-l`. Note what this shortcut is for and learn it.
 4. Without explicitly write the command, display the command `cal 3 2022`, *without executing it* (i.e. without pressing enter).
@@ -167,13 +167,13 @@ There are several types of wildcards, but we will only use the most common ones:
 
 * `*` represents all the characters 
 * `?` represents any single character
-* `[]` represents a range of characters
+* `[ ]` represents a range of characters
 
 !!! info "Wildcards"
     
     * `*` can represent a possibily empty string of characters, except if it is the first character of the string and the string starts with a dot (`.`) ;
     
-    * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between $0$ and $5$. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit.
+    * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between `0` and `5`. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit.
         
     * You may get further details in `man bash` at the Pathname Expansion section.
     

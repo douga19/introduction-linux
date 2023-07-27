@@ -44,9 +44,9 @@ Debian is a free operating system (OS) based on a UNIX-like kernel (Linux or Fre
 
 # UNIX-based OS today
 
-- **GNU/Linux** Linux kernel + GNU utilities, equips most servers and supercomputers, and is increasingly used on desktops and laptops (1\% to 2\%).
-- **Android** Linux kernel + Android utilities, equips most smartphones and tablets (80\%).
-- **FreeBSD** UNIX-like OS, equips most Apple Macintosh computers (10\%), and the OS of Playstation 3 and 4.
+- **GNU/Linux** Linux kernel + GNU utilities, equips most servers and supercomputers, and is increasingly used on desktops and laptops (1% to 2%).
+- **Android** Linux kernel + Android utilities, equips most smartphones and tablets (80%).
+- **FreeBSD** UNIX-like OS, equips most Apple Macintosh computers (10%), and the OS of Playstation 3 and 4.
 - **iOS and MacOS** UNIX-like OS, equips iPhones and iPads and Macs from Apple.
 
 # What is a shell ?
