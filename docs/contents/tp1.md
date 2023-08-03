@@ -186,13 +186,14 @@ There are several types of wildcards, but we will only use the most common ones:
         $ echo [^ab]*
         $ echo c*
         $ echo ??????
+
 3. Using the `ls` command, list all the files that:
-    a. ends with `5`
-    b. starts with `annee4`
-    c. starts with `annee4` and has a maximum of 7 letters
-    d. starts with `annee` and whose sixth character is not a digit
-    e. contains the string `ana`
-    f. starts with `a` or `A`
-    g. whose penultimate character is `4` or `1`
+    - ends with `5`
+    - starts with `annee4`
+    - starts with `annee4` and has a maximum of 7 letters
+    - starts with `annee` and whose sixth character is not a digit
+    - contains the string `ana`
+    - starts with `a` or `A`
+    - whose penultimate character is `4` or `1`
 4. List all the hidden files in your home directory (files whose name starts with a dot).
 5. List all the files starting with `std` and ending with `.h` in the `/usr/include` directory and its subdirectories.
