@@ -15,7 +15,7 @@ Linux is a high-performance, free operating system similar to UNIX. Linus Torval
 
 Linux's superiority over other Unix-like systems lies in being completely free, both monetarily and in terms of usage rights. This freedom is enabled by the GNU General Public License (GPL), associated with the GNU project started by Richard Stallman in 1983, providing critical utility programs for Linux, hence the name GNU/Linux.
 
-Compared to Microsoft Windows, the most widely used OS, Linux offers several benefits: (1) being free, (2) high stability with fewer crashes, (3) strong resistance to viruses and malware, (4) availability of numerous high-quality, free applications, and (5) compatibility with older computers unable to support newer Windows versions. For a more comprehensive list of advantages, the article \href{http://www.linfo.org/reasons_to_convert.html}{"25 Reasons to Convert to Linux"} can provide further insights.
+Compared to Microsoft Windows, the most widely used OS, Linux offers several benefits: (1) being free, (2) high stability with fewer crashes, (3) strong resistance to viruses and malware, (4) availability of numerous high-quality, free applications, and (5) compatibility with older computers unable to support newer Windows versions. For a more comprehensive list of advantages, the article ["25 Reasons to Convert to Linux"](http://www.linfo.org/reasons_to_convert.html) can provide further insights.
 
 # What is a Linux distribution ?
 

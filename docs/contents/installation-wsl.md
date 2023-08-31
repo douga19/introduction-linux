@@ -1,74 +1,180 @@
-# [TI307] - Introduction aux systèmes GNU/Linux
+---
+title: Get yourself a Linux environment
+---
 
-Dans ce tutoriel, nous allons voir comment vous pourrez directement disposer d'un environnement Linux dans Windows en utilisant *Windows Subsystem for Linux* (WSL).
+# Get yourself a Linux environment
 
-## Activation du WSL
-1. Dans la barre de recherche Windows, tapez *"Activer ou désactiver des Fonctionnalités Windows"*.
->> Capture fenêtre
-2. Vous verrez apparaître une boîte de dialogue dans laquelle nous allons cocher des options.
-3. Cochez les options: **Sous-système Windows pour Linux** et **Plateforme de machine virtuelle**. Ensuite cliquez sur Ok. 
->> Capture fenêtre
-4. La boîte de dialogue vous indiquera éventuellement de redémmarer votre ordinateur pour que les changements soient pris en compte.
+## Installation of WSL (for Windows users)
 
-## Installation d'une distribution GNU/Linux (nous allons installer Debian)
-1. Ouvrez ensuite *Windows Store* et tapez dans la barre de recherche **debian**. Une fois que **Debian** est proposé dans les suggestions, cliquez dessus.
-2. Cliquez sur Installer.
->> Capture fenêtre
-3. À la fin du téléchargement (environ 80Mo), cherchez Debian dans la barre de recherche Windows, et cliquez dessus.
-4. Un émulateur de terminal nommé *Debian* va s'ouvrir et finaliser l'installation.
->> Capture fenêtre
-5. Dans ce même terminal, une fois l'installation terminée, on vous demandera d'entrer un nom d'utilisateur et un mot de passe. Notez que pour des raisons de sécurité, le mot de passe que vous allez tapez ne va pas apparaître en clair, vous pourriez avoir l'impression de ne rien taper, mais en fait si.
->> Capture fenêtre
-6. Une fois votre login et mot de passe renseigné, voilà! Vous avez désormais un système GNU/Linux (en ligne de commande) installé dans Windows.
+In this tutorial we will see how you can directly have a Linux environment in Windows using *Windows Subsystem for Linux* (WSL).
 
-## Naviguer dans l'arborescence WSL depuis Windows
-1. Ouvrez un explorateur de fichier depuis Windows.
-2. Dans la barre d'adresse, saisissez: `\\wls$`, puis tapez sur entrée.
+### WSL activation
+1. In the search bar of Windows, type *"Activer ou désactiver des Fonctionnalités Windows"*.
 >> Capture fenêtre
-3. À partir de là, vous pourrez accéder à votre répertoire personnel en cliquant sur `home` puis sur le dossier dont le nom est votre `login`. 
-4. À présent vous êtes en mesure de récupérer vos fichiers debian depuis Windows.
-5. Afin de tester que tout va bien, dans le terminal debian entrez la commande suivante:
+2. There will be a dialog box in which we will check options.
+3. Make sure that the options **Sous-système Windows pour Linux** and **Plateforme de machine virtuelle** are checked and click on OK.
+>> Capture fenêtre
+4. You will probably be asked to restart your computer for the changes to take effect.
+
+### GNU/Linux distribution installation (Debian)
+1. Open up *Windows Store* and type **debian** in the search bar. Once **Debian** is proposed in the suggestions, click on it.
+2. Click on **Obtenir**.
+>> Capture fenêtre
+3. Once the download is finished (about 80MB), search for Debian in the Windows search bar and click on it.
+4. A terminal emulator named *Debian* will open and finalize the installation.
+>> Capture fenêtre
+5. In this terminal, once the installation is finished, you will be asked to enter a username and a password. Note that for security reasons, the password you will type will not appear in clear, you may have the impression of not typing anything, but in fact yes.
+>> Capture fenêtre
+6. Once your login and password have been entered, that's it! You now have a GNU/Linux system (command line) installed in Windows.
+
+### Browse the WSL files from Windows
+1. Open a file explorer from Windows.
+2. In the adress bar, type: `\\wls$`, then press enter.
+>> Capture fenêtre
+3. From there, you will be able to access your personal directory by clicking on `home` then on the folder whose name is your `login`. 
+4. From now, you are able to retrieve your debian files from Windows.
+5. To test that everything is fine, in the debian terminal enter the following command: 
 ```bash
 touch file.txt
 ```
-puis depuis l'explorateur de fichiers Windows vérifiez que le fichier a bien été créé dans votre repertoire personnel (il vous faudra éventuellement actualiser la fenêtre avec `F5`).
-6. Éditez ensuite `file.txt` dans un éditeur de texte depuis Windows, puis enregistrer.
+then from the Windows file explorer check that the file has been created in your personal directory (you may need to refresh the window with `F5`).
+6. Edit `file.txt` in a text editor from Windows, then save it.
 >> Capture fenêtre
-7. Retournez enfin dans le terminal debian pour vérifier que le fichier a bien été modifié. Tapez la commande:
+7. Finally, go back to the debian terminal to check that the file has been modified. Type the command:
 ```bash
 cat file.txt
 ```
-8. Vous remarquerez un petit problème avec les fins de ligne, Windows et Unix les gèrent de manières différentes (nous en reparlerons).
+8. You may observe a small problem with the end of lines, Windows and Unix manage them differently (we will talk about it later).
 
-## Installer des paquets sous Debian avec `apt`
-La plupart des distributions GNU/Linux permettent d'installer des programmes, des bibliothèques (ensemble de programmes), des logiciels précompilés en passant par des *dépôts (repositories en ang.)* en ligne. Les programmes et les bibliothèques présents dans ces dépôts sont appelés des *paquets (packages en ang.)*.
+### Install Debian packages with `apt`
+Most of the GNU/Linux distributions allow to install programs, libraries (set of programs), precompiled software by going through online *repositories*. The programs and libraries present in these repositories are called *packages*.
 
-L'installation de ces paquets sont effectués par un ... *gestionnaire de paquets*. Sous Debian et ses dérivés, le gestionnaire de paquets s'appelle `apt`.
+The installation of these packages is performed by a ... *package manager*. Debian and its derivatives, the package manager is called `apt`.
 
-Comme ces paquets sont installés sur le système, pour tous les utilisateurs, seul l'administrateur du système est autorisé à les installer, mais vous pourrez prendre ce rôle.
+Since those packages are installed on the system, for all users, only the system administrator is allowed to install them, but you will be able to take this role.
 
-La commande `sudo` permet d'exécuter la commande qui la suit en tant qu'administrateur. Il vous sera demandé votre mot de passe (une fois pas session).
+!!! note "`sudo` ?"
+    The `sudo` command allows you to execute the command that follows it as an administrator. You will be asked for your password (once per session).
 
-Installons alors quelques paquets.
+Let us install some packages.
 
-1. Dans un premier temps, mettez à jour la base de données et les paquets déjà installés en tapant dans votre terminal Debian:
+1. First, update the database and the already installed packages by typing in your Debian terminal:
 ```bash
 sudo apt update
 sudo apt upgrade
 ```
-Cette étape peut prendre plus ou moins de temps suivant votre connexion internet.
-2. Une fois les mises à jour effectuées, nous allons installer 3 paquets : les éditeurs de texte `nano` et `vim` et le compilateur c `gcc` avec la commande suivante:
+This step may take more or less time depending on your internet connection.
+2. Once the updates are done, we will install 4 packages: the text editors `nano` and `vim`, the c compiler `gcc`, and a calandar app `ncal` with the following command:
 ```bash
-sudo apt install nano vim gcc
+sudo apt install nano vim gcc ncal
 ```
-3. Il est également possible de rechercher des paquets par nom ou par mot-clé grâce à l'action `search` de la commande `apt`.
+3. It is also possible to search for packages by name or keyword using the `search` action of the `apt` command.
 >> Capture fenêtre
-4. Pour supprimer/desinstaller un paquet, on utilise l'action `remove` de la commande `apt`:
+4. To remove / uninstall a package, use the `remove` action of the `apt` command:
 ```bash
 sudo apt remove nano
 ```
-5. Enfin, certaines bibliothèques deviennet inutiles une fois que les paquets qui les ont utilisées sont supprimés. L'action `autoremove` permet de faire le ménage en désinstallant les bibliothèques devenues inutiles.
+5. Finally, some libraries become useless once the packages that used them are removed. The `autoremove` action allows you to clean up by uninstalling the libraries that have become useless.
 ```bash
 sudo apt autoremove
 ```
+
+## Installation of UTM (for MacOS users)
+
+In this tutorial we will see how you can directly have a Linux environment in MacOS using *UTM*.
+
+### UTM and Debian installation 
+
+1. Download the UTM application from the App Store. Or directely from [here](https://mac.getutm.app/).
+2. Open the application, there will be options to install and emulate an OS (Windows, Linux, Android, ...). We will choose Linux.
+3. Click on the *Browse UTM gallery* button, it will open up the UTM Virtual OS gallery.
+4. Choose one of the Debian 11 distribution of your choice (for this tuto I choose the one with Xfce graphical environment).
+   ![Debian distribution](/assets/img/debian-distro.png)
+   <!-- <img src="/assets/img/debian-distro.png" alt="" width="250"/> -->
+
+5. Then click on *Open in UTM* button, this will download the image and install Debian on your computer.
+6. Once the installation is finished, get back to the UTM application, you will see the Debian OS in the list of the installed OS.
+7. Click on the Debian OS, then click on the *Play* button.
+8. You will end up in a login page, enter your username and password (the default username is `debian` and the default password is `debian`).
+9.  Pay attention to the keyboard layout, it may be different from the one you are used to. It is by default the QWERTY keyboard layout.
+
+### Keyboard layout change
+
+1. To change the keyboard layout, click on the *Applications* button on the top left corner of the screen. 
+2. There will be a list of applications, click on the *Settings* application, then on *Keyboard*.
+3. You will have a window with the keyboard settings, click on the *Layout* tab.
+4. From there, change the keyboard model to *MacBook/MacBook Pro* and on the keyboard layout option, click on the *Add* button choose the one you are used to (for me it is *French (AZERTY)*).
+5. You can by now delete the default keyboard layout which was the QWERTY one.
+6. At the end of the configuration you should end up with something similar to this:
+   <img src="/assets/img/keyboard-setting.png" alt="Keyboard layout configuration" width="250"/>
+
+7. You can close the window, and now you can use the keyboard layout you are used to.
+
+    !!! warning "On the login screen"
+        On the login screen the keyboard layout will remain the default one i.e. QWERTY. So you will have to type your password with the QWERTY layout.
+
+### Sharing MacOs folder with your Debian OS
+
+For this step, you will need to have a folder in your MacOS that you want to share with your Debian OS. For this tutorial, I will use a folder named `ti307-introduction-to-linux`.
+
+1. First you need to turn off the Debian OS by clicking on the *Stop* button in the UTM application.
+2. Then right click on Debian OS on the list of the installed OS, and click on the *Edit* button.
+3. You will have several options to configure your OS, we will focus on the *Share* option.
+4. Click on *Share* option, and browse then select the folder you want to share from your MacOS. Let the other options as they are.
+5. At the end of this step your Debian OS configuration should be similar to this:
+
+    ![Shared folder setting](/assets/img/shared-folder-setting.png)
+
+6. Now you can turn on your Debian OS by clicking on the *Play* button.
+7. Log in, then on your desktop you should find a *Volume Disk* named `share`. Double click on it and you should retrieve the folder you shared from MacOS.
+8. In this file explorer window, right click and choose *Open in Terminal Here*. Then type the following command:
+```bash
+sudo touch file.txt
+```
+
+    !!! note "`sudo` ?"
+        The `sudo` command allows you to execute the command that follows it as an administrator. You will be asked for your password (once per session).
+
+1. Get back into your MacOs file explorer, you should find the file `file.txt` in the folder you shared. Then from there, edit this file using a text editor.
+2. Get back to the Debian terminal, and type the following command:
+```bash
+sudo cat file.txt
+```
+If you are able to see on the terminal the content of `file.txt`, everything went right and from now you can share files between MacOS and Debian.
+
+    !!! tip "Path to the shared directory"
+        In the Debian OS, the path to the shared directory is `/media/share`. Make sure that you remember this :)
+
+
+
+### Install Debian packages with `apt`
+Most of the GNU/Linux distributions allow to install programs, libraries (set of programs), precompiled software by going through online *repositories*. The programs and libraries present in these repositories are called *packages*.
+
+The installation of these packages is performed by a ... *package manager*. Debian and its derivatives, the package manager is called `apt`.
+
+Since those packages are installed on the system, for all users, only the system administrator is allowed to install them, but you will be able to take this role.
+
+Let us install some packages.
+
+1. Open up a terminal. And first, update the database and the already installed packages by typing:
+```bash
+sudo apt update
+sudo apt upgrade
+```
+This step may take more or less time depending on your internet connection.
+2. Once the updates are done, we will install 4 packages: the text editors `nano` and `vim`, the c compiler `gcc` and a calandar app `ncal` with the following command:
+```bash
+sudo apt install nano vim gcc ncal
+```
+3. It is also possible to search for packages by name or keyword using the `search` action of the `apt` command.
+>> Capture fenêtre
+4. To remove / uninstall a package, use the `remove` action of the `apt` command:
+```bash
+sudo apt remove nano
+```
+5. Finally, some libraries become useless once the packages that used them are removed. The `autoremove` action allows you to clean up by uninstalling the libraries that have become useless.
+```bash
+sudo apt autoremove
+```
+
 

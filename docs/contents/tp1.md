@@ -1,17 +1,20 @@
 ---
-title: TP1 - First commands
+title: Lab1 - First commands
 ---
 
-# TP1 - First commands
+# Lab1 - First commands
 
 !!! info "General instructions"
-    - In all exercises, the `$ ` chain at the beginning of the line represents the command prompt and should not be typed.
-    - For now, each time you open a terminal, you are prompted to enter the following command, (followed, as always, by the enter key) for pedagogical reasons:
+    
+        - In all exercises, the `$ ` chain at the beginning of the line represents the command prompt and should not be typed.
+        - For now, each time you open a terminal, you are prompted to enter the following command, (followed, as always, by the enter key) for pedagogical reasons:
 
-            $ PS1='$ '
+        ```bash
+        $ PS1='$ '
+        ```
 
 
-## Exercise 1 : First commands
+### Exercise 1 : First commands
 
 1. Try out the following commands in a terminal. Describe in one sentence its usefulness, indicate the name of the command, its number of arguments and its arguments. For example, the first command is `date`, it has no argument and its usefulness is to display the current date and time.
     -   `date`
@@ -34,7 +37,7 @@ title: TP1 - First commands
 8. Open again a terminal and type `C-p` several times. Comment.
 9. Close the terminal using keyboard shortcuts.
 
-## Exercise 2 : Directories and files
+### Exercise 2 : Directories and files
 
 1. Open a terminal and type the following command, respecting its syntax:
 ```bash
@@ -52,88 +55,100 @@ PS1 = '$ '
 11. The **`~`** character (which is read *tilde*) is entered on the keyboard with the key combination `Alt Gr-2`. Enter the command `echo ~`, then the command `cd ~`. What did the shell do to the character `~` ?
 12. Represent the directories and files mentioned in the exercise as a tree (i.e. as a genealogical tree).
 
-## Exercise 3 : Manipulating directories and files (1)
+### Exercise 3 : Manipulating directories and files (1)
 
 1. Make sure you are in your home directory and list its contents.
 2. Type the command `mkdir tp_shell` (for *make directory*, i.e. create a directory). List the contents of the home directory and the `tp_shell` directory.
 3. Type the command `mkdir abeilles tp_shell/tp1 ~/arbres`. What did it do ? Among its arguments, which are absolute paths and which are relative paths ? (hint: see the result of `echo ~/arbres`).
 4. What does the following command do ?
-
-        $ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/
-
+```bash
+$ mkdir -p vivant/plante/fleur tp_shell/tp1/exos/ex1/
+```
 5. The `bash` shell (which is your default shell) has a feature that saves a lot of time and avoids typos: automatic completion. It is done with the tabulation key (the key to the left of the `a` key). Enter the following characters (the tabulation key is represented below by `<Tab>`) and see the result in the terminal:
-
-        $ mkd<Tab> vi<Tab><Tab><Tab>roses
-
+```bash
+$ mkd<Tab> vi<Tab><Tab><Tab>roses
+```
 6. When several choices are possible, tabulation does not trigger completion, but pressing the tabulation key twice in a row lists the possible choices: try with
-
-        $ ls a<Tab><Tab>
-
+```bash
+$ ls a<Tab><Tab>
+```
 7. The `rmdir` command (for *remove directory*) allows you to delete directories. Test it with the command
-
-        $ rmdir vivant tp_shell/tp1/exos/ex1
-
+```bash
+$ rmdir vivant tp_shell/tp1/exos/ex1
+```
 and then delete the subdirectory `tp1` from the directory `tp_shell`.
-8. The `touch` command allows (among other things) to create empty (normal) files. Observe the result of the command (executed from your home directory):
 
-        $ touch ~/arbres/hello.c abeilles/truc.txt bidule
-    
+8. The `touch` command allows (among other things) to create empty (normal) files. Observe the result of the command (executed from your home directory):
+```bash
+$ touch ~/arbres/hello.c abeilles/truc.txt bidule
+```
 by typing
-    
-        $ ls ~/arbres abeilles/ .
-    
-!!! note inline end
-    
-    `.` refers to the current directory.
+```bash    
+$ ls ~/arbres abeilles/ .
+```
+!!! note "The dot `.`"
+        
+        `.` refers to the current directory.
+
 
 9. The `mv` command for *move*, allows you to move or rename files. Observe with `ls` the result of each of the following commands:
-        
-        $ mv arbres/hello.c arbres/bonjour.c
-        $ mv abeilles arbres vivant/
-        $ mv bidule vivant
-        $ mv vivant vie
-
-10. The `cp` command for *copy*, allows you to copy files and directories. Observe the result of the following commands:
-
-        $ cp vie/arbres/bonjour.c salut.c
-        $ mkdir copies
-        $ cp salut.c vie/abeilles/truc.txt copies
-        $ cp vie/bidule tp_shell copies
-        $ cp -R vie/bidule tp_shell copies
-        $ cp vie copie_vie
-        $ cp -R vie copie_vie
-
+```bash
+$ mv arbres/hello.c arbres/bonjour.c
+$ mv abeilles arbres vivant/
+$ mv bidule vivant
+$ mv vivant vie
+```
+10.  The `cp` command for *copy*, allows you to copy files and directories. Observe the result of the following commands:
+```bash
+$ cp vie/arbres/bonjour.c salut.c
+$ mkdir copies
+$ cp salut.c vie/abeilles/truc.txt copies
+$ cp vie/bidule tp_shell copies
+$ cp -R vie/bidule tp_shell copies
+$ cp vie copie_vie
+$ cp -R vie copie_vie
+```
 Describe the operation of the `cp` command, depending on whether its last argument is an existing directory or not and whether the `-R` option is present or not.        
 
 11. Finally, the `rm` command (for *remove*) allows you to delete files and directories. Observe the result of the following commands:
-
-        $ rm vie/bidule
-        $ rm copies
-        $ rm -r copies
-        $ rm -R copie_vie
-        $ rm -i vie/arbres/bonjour.c vie/abeilles/truc.txt
-
+```bash
+$ rm vie/bidule
+$ rm copies
+$ rm -r copies
+$ rm -R copie_vie
+$ rm -i vie/arbres/bonjour.c vie/abeilles/truc.txt
+```
 12. Delete all files and directories created during this exercise.
 
-## Exercise 4 : Manipulating directories and files (2)
+### Exercise 4 : Manipulating directories and files (2)
 
-!!! failure ""
-    mila ampiana sary
+```mermaid
+stateDiagram-v2
+    ~ --> Mail
+    ~ --> Rapport
+    ~ --> Web
+    Rapport --> rapport.txt
+    Rapport --> Docs
+    Docs --> Afaire
+    Docs --> Fait
+    Web --> index.html
+```
 
-Create the following tree structure. The `~` represents the user's home directory. The directories are in bold. The **Mail**, **Rapport** and **Web** directories will be created in a single command using `mkdir`.
+Create the following tree structure. The `~` represents the user's home directory. Only `rapport.txt` and `index.html` are normal files, the others are all directories. The directories **Mail**, **Rapport** and **Web** directories will be created in a single command using `mkdir`.
 
-Use the `touch` command to create the ordinary files and a text editor (e.g. `gedit`) to enter sentences (no matter which) in these files.
+Use the `touch` command to create the normal files and a text editor to give them some content.
 
 From your home directory, perform the following operations (there are several possible solutions):
+
 1. Go directly to `~/Rapport/Docs/Afaire`.
-2. From there, go to `~/Rapport/Docs/Fait` and copy the file `rapport.txt` there. Reminder: the current directory can be designated by `.` (a dot).
+2. From there, go to `~/Rapport/Docs/Fait` and copy the file `rapport.txt` there. Recall that the current directory can be designated by `.` (a dot).
 3. Rename this copy `rapport_copie.txt`.
 4. Go back to `~/Rapport`.
 5. Without changing directories, display the content of the file`index.html` using the `cat` command.
 6. Without changing directories, list the contents of the `Web` directory.
 7. Get back into `~` and delete the whole tree structure of this exercise.
 
-## Exercise 5 : Built-in commands
+### Exercise 5 : Built-in commands
 
 !!! info "Internal vs external commands"
 
@@ -146,7 +161,7 @@ From your home directory, perform the following operations (there are several po
 
     The `man` command provides help *for external commands*. For `bash` primitives, you can use the `help` command.
 
-## Exercise 6 : Manual pages
+### Exercise 6 : Manual pages
 
 1. Type the command `ls`. What are the `-l` and `-a` options for ? Press the `q` key to exit the help and test them.
 2. Using the manual, say what the `-f` option of the `rm` command is used for and how you can delete a file whose name starts with a dash (like for example `-f`).
@@ -157,7 +172,7 @@ From your home directory, perform the following operations (there are several po
         $ man 1 printf
         $ man 3 printf
 
-## Exercise 7 : Wildcards
+### Exercise 7 : Wildcards
 
 Wildcards are characters that are used to represent one or more other characters. They are used to specify patterns in commands.
 
