@@ -13,21 +13,41 @@ title: Lab1 - First commands
         $ PS1='$ '
         ```
 
-
 ### Exercise 1 : First commands
 
+!!! tip "What is a command ?"
+
+    A *command*  is a sequence of words ending with a newline character. That is, a command is a sequence of characters that ends with the `<Enter>` key. The first word is the name of the command, the others are its *arguments*. The command is executed by the shell, which is a program that interprets the command line.
+
+    ```bash
+    $ touch file.txt
+    ```
+    
+    Here the command is `touch` and its argument is `file.txt`. The `$` sign at the begining of the line is the command prompt. It is not part of the command.
+
+    Every single word in the command line is separated by one or more spaces. The shell interprets the spaces as separators between words. The shell interprets the newline character as the end of the command.
+
+
+
+
+
+
+
+
 1. Try out the following commands in a terminal. Describe in one sentence its usefulness, indicate the name of the command, its number of arguments and its arguments. For example, the first command is `date`, it has no argument and its usefulness is to display the current date and time.
-    -   `date`
-    -   `cal`
-    -   `cal 3 2022`
-    -   `who`
-    -   `who am i`
-    -   `  who  am   i`
-    -   `uname`
-    -   `uname -m -r`
-    -   `uname -mrs`
-    -   `echo Hello, world!`
-    -   `echo       Hello,        world!`
+```bash
+$ date
+$ cal
+$ cal 3 2022
+$ who
+$ who am i
+$   who  am   i
+$ uname
+$ uname -m -r
+$ uname -mrs
+$ echo Hello, world!
+$ echo       Hello,        world!
+```
 2. Press on the right arrow key of your keyboard or `C-p` (the `Ctrl` key at the same time as the `p` key) several times, until the command `who` is displayed. Now press the down arrow key or type `C-n` until the command `uname -m -r` is displayed and then press enter. Note what these shortcuts are for and learn them.
 3. Press `C-l`. Note what this shortcut is for and learn it.
 4. Without explicitly write the command, display the command `cal 3 2022`, *without executing it* (i.e. without pressing enter).
@@ -35,7 +55,7 @@ title: Lab1 - First commands
 6. Display again the command `uname`, without typing it nor executing it. Then press `C-d`. What happened ?
 7. Clear the current command line with a keyboard shortcut and then type `C-d`. What happened ?
 8. Open again a terminal and type `C-p` several times. Comment.
-9. Close the terminal using keyboard shortcuts.
+9.  Close the terminal using keyboard shortcuts.
 
 ### Exercise 2 : Directories and files
 
@@ -148,20 +168,36 @@ From your home directory, perform the following operations (there are several po
 6. Without changing directories, list the contents of the `Web` directory.
 7. Get back into `~` and delete the whole tree structure of this exercise.
 
-### Exercise 5 : Built-in commands
+### Exercise 5 : Built-in and external commands
 
-!!! info "Internal vs external commands"
 
-    Shell commands can be either internal (or primitive) shell commands, shell functions, aliases, or external commands, i.e. compiled programs or scripts installed on the system. 
+!!! tip "Different types of commands"
+
+    There are several types of commands: **external commands**, **internal commands**, **shell functions** and **aliases**. External commands are compiled programs or scripts installed on the system. Internal commands (also called *built-in commands*) are commands built into the shell. Shell functions are functions defined by the user. Aliases are shortcuts for commands defined by the user.
+
+    The `type` command allows you to know the type of a command. For example, the `type` command itself is an internal command:
+
+    ```bash
+    $ type type
+    type is a shell builtin
+    ```
     
 1. For each command name that appears in the previous exercises, say with the `type` command which category it belongs to (don't forget `type`).
 2. Can you guess which directories contain most of the programs installed on the system ?
 
-!!! info "Manual pages"
+### Exercise 6 : Getting help
 
-    The `man` command provides help *for external commands*. For `bash` primitives, you can use the `help` command.
+!!! tip "Manual pages"
 
-### Exercise 6 : Manual pages
+    The `man` command provides help for external commands. For built-in commands, you can use the `help` command.
+    
+    The `man` command displays the manual pages of the command given as argument. The manual pages are divided into sections. The section is indicated between parenthesis on the top left of the page. 
+    
+    * The `NAME` part describes in one line what the command does. The `SYNOPSIS` part describes the syntaxes accepted by the command. 
+    * The `DESCRIPTION` part describes in detail what the command does. It lists the options and arguments accepted by the command.
+    * There may be an `EXAMPLES` part that gives examples of use of the command.
+
+    The manual pages are more or less understandable... But you rarely need to understand everything.
 
 1. Type the command `ls`. What are the `-l` and `-a` options for ? Press the `q` key to exit the help and test them.
 2. Using the manual, say what the `-f` option of the `rm` command is used for and how you can delete a file whose name starts with a dash (like for example `-f`).
@@ -172,20 +208,21 @@ From your home directory, perform the following operations (there are several po
         $ man 1 printf
         $ man 3 printf
 
+6. Dans la page de manuel de mv, observer les deux premières lignes de la partie « SYNOP-
+SIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au
+manuel de man.
+In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part. Can you guess what do the brackets mean ? the three dots ? If necessary, refer to the `man` manual.
+
 ### Exercise 7 : Wildcards
 
-Wildcards are characters that are used to represent one or more other characters. They are used to specify patterns in commands.
+!!! tip "Wildcards"
 
-Wildcards are expanded by the shell before the command is executed. The shell replaces the wildcard with the list of files that match the pattern. This is called *pathname expansion*.
+    **Wildcards** are characters that are used to represent one or more other characters. They are used to specify patterns in commands.
 
-There are several types of wildcards, but we will only use the most common ones: `*`, `?` and `[ ]`.
+    Wildcards are expanded by the shell before the command is executed. The shell replaces the wildcard with the list of files that match the pattern. This is called *pathname expansion*.
 
-* `*` represents all the characters 
-* `?` represents any single character
-* `[ ]` represents a range of characters
+    There are several types of wildcards, but we will only use the most common ones: `*`, `?` and `[ ]`.
 
-!!! info "Wildcards"
-    
     * `*` can represent a possibily empty string of characters, except if it is the first character of the string and the string starts with a dot (`.`) ;
     
     * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between `0` and `5`. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit.

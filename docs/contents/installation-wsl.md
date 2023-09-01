@@ -10,21 +10,19 @@ In this tutorial we will see how you can directly have a Linux environment in Wi
 
 ### WSL activation
 1. In the search bar of Windows, type *"Activer ou désactiver des Fonctionnalités Windows"*.
->> Capture fenêtre
+![Windows functionnalities](/assets/img/activate-windows-funtionnalities.png)
 2. There will be a dialog box in which we will check options.
 3. Make sure that the options **Sous-système Windows pour Linux** and **Plateforme de machine virtuelle** are checked and click on OK.
->> Capture fenêtre
+![Check wsl and vm](/assets/img/checked-wsl-vm.png)
 4. You will probably be asked to restart your computer for the changes to take effect.
 
 ### GNU/Linux distribution installation (Debian)
-1. Open up *Windows Store* and type **debian** in the search bar. Once **Debian** is proposed in the suggestions, click on it.
+1. Open up *Microsoft Store* and type **debian** in the search bar. Once **Debian** is proposed in the suggestions, click on it.
 2. Click on **Obtenir**.
->> Capture fenêtre
+![Debian](/assets/img/debian.png)
 3. Once the download is finished (about 80MB), search for Debian in the Windows search bar and click on it.
 4. A terminal emulator named *Debian* will open and finalize the installation.
->> Capture fenêtre
 5. In this terminal, once the installation is finished, you will be asked to enter a username and a password. Note that for security reasons, the password you will type will not appear in clear, you may have the impression of not typing anything, but in fact yes.
->> Capture fenêtre
 6. Once your login and password have been entered, that's it! You now have a GNU/Linux system (command line) installed in Windows.
 
 ### Browse the WSL files from Windows
@@ -69,7 +67,6 @@ This step may take more or less time depending on your internet connection.
 sudo apt install nano vim gcc ncal
 ```
 3. It is also possible to search for packages by name or keyword using the `search` action of the `apt` command.
->> Capture fenêtre
 4. To remove / uninstall a package, use the `remove` action of the `apt` command:
 ```bash
 sudo apt remove nano
@@ -167,7 +164,6 @@ This step may take more or less time depending on your internet connection.
 sudo apt install nano vim gcc ncal
 ```
 3. It is also possible to search for packages by name or keyword using the `search` action of the `apt` command.
->> Capture fenêtre
 4. To remove / uninstall a package, use the `remove` action of the `apt` command:
 ```bash
 sudo apt remove nano

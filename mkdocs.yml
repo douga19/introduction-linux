@@ -83,8 +83,10 @@ markdown_extensions:
 plugins:
   # enable site search
   - search
+
   # enable tags in posts
   - tags
+  # enable hidden pages for the corrige
 
 extra:
   social:
