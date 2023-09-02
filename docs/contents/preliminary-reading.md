@@ -11,6 +11,9 @@ It receives requests to use the computer's resources - memory storage resources 
 UNIX was an OS originally developed by Ken Thompson at Bell Labs, the legendary research arm of AT&T (the former U.S. telecommunications monopoly) in 1969 and was substantially improved at the University of California at Berkeley (UCB) during the 1970s and 1980s. Many variations were subsequently developed, and they are collectively referred to as Unix-like, or Unix-based operating systems. Unix-based operating systems are widely regarded as the best operating systems ever created in terms of several criteria, including stability, security, flexibility, scalability and elegance.
 
 # What is Linux and GNU/Linux ?
+
+<img src="../../assets/img/gnulinux-logo.png" alt="" width="250"/>
+
 Linux is a high-performance, free operating system similar to UNIX. Linus Torvalds started Linux (a concatenation of Linus and UNIX) in 1991, aiming to create a free UNIX alternative due to dissatisfaction with MS-DOS. It rapidly became a global project, attracting developers worldwide [^1], leading to continuous performance improvements and widespread adoption by individuals, corporations, educational institutions, and governments.
 
 Linux's superiority over other Unix-like systems lies in being completely free, both monetarily and in terms of usage rights. This freedom is enabled by the GNU General Public License (GPL), associated with the GNU project started by Richard Stallman in 1983, providing critical utility programs for Linux, hence the name GNU/Linux.
@@ -28,6 +31,8 @@ Most of these distributions are available (1) in English, (2) for Intel-compatib
 In this course we are going to start our Linux journey with Debian.
 
 # What is Debian ?
+
+<img src="../../assets/img/debian-logo.jpg" alt="" width="250"/>
 
 Debian is a free operating system (OS) based on a UNIX-like kernel (Linux or FreeBSD) that can be dowloaded [here](https://www.debian.org/download). You can find more information about Debian [here](https://www.debian.org/intro/about). In order to install it on your computer, please refer to the tutorial already provided on the [moodle page of the course](https://moodle.myefrei.fr/course/view.php?id=11798).
 
