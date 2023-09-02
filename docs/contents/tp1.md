@@ -77,6 +77,19 @@ PS1 = '$ '
 
 ### Exercise 3 : Manipulating directories and files (1)
 
+!!! tip "Path access"
+    
+    A ressource (file or directory) is referenced by a *path*. In this path, under Linux, the names of the directories and files are separated by a slash `/` (while we use a backslash `\` under Windows).
+
+    There exists two types of paths: absolute and relative.
+
+    1. An *absolute* path is based on the root of the tree and starts with `/`, for example: `/home/debian` is the absolute path to the user debian's home directory. It remains valid regardless of the context.
+    2. A *relative* path is relative to the current directory where the user is located. For example, if the current directory is `/home/debian`, the relative path `./Documents` refers to the directory `/home/debian/Documents`. A path that starts with something other than `/` or `~` is a relative path.
+
+    The `.` references the current directory. The `..` references the parent directory.
+
+    Le `.` fait référence au répertoire courant. Les `..` font référence au répertoire parent.
+
 1. Make sure you are in your home directory and list its contents.
 2. Type the command `mkdir tp_shell` (for *make directory*, i.e. create a directory). List the contents of the home directory and the `tp_shell` directory.
 3. Type the command `mkdir abeilles tp_shell/tp1 ~/arbres`. What did it do ? Among its arguments, which are absolute paths and which are relative paths ? (hint: see the result of `echo ~/arbres`).
@@ -97,7 +110,6 @@ $ ls a<Tab><Tab>
 $ rmdir vivant tp_shell/tp1/exos/ex1
 ```
 and then delete the subdirectory `tp1` from the directory `tp_shell`.
-
 8. The `touch` command allows (among other things) to create empty (normal) files. Observe the result of the command (executed from your home directory):
 ```bash
 $ touch ~/arbres/hello.c abeilles/truc.txt bidule
@@ -106,11 +118,6 @@ by typing
 ```bash    
 $ ls ~/arbres abeilles/ .
 ```
-!!! note "The dot `.`"
-        
-        `.` refers to the current directory.
-
-
 9. The `mv` command for *move*, allows you to move or rename files. Observe with `ls` the result of each of the following commands:
 ```bash
 $ mv arbres/hello.c arbres/bonjour.c
@@ -118,7 +125,7 @@ $ mv abeilles arbres vivant/
 $ mv bidule vivant
 $ mv vivant vie
 ```
-10.  The `cp` command for *copy*, allows you to copy files and directories. Observe the result of the following commands:
+10.   The `cp` command for *copy*, allows you to copy files and directories. Observe the result of the following commands:
 ```bash
 $ cp vie/arbres/bonjour.c salut.c
 $ mkdir copies
@@ -130,7 +137,7 @@ $ cp -R vie copie_vie
 ```
 Describe the operation of the `cp` command, depending on whether its last argument is an existing directory or not and whether the `-R` option is present or not.        
 
-11. Finally, the `rm` command (for *remove*) allows you to delete files and directories. Observe the result of the following commands:
+11.  Finally, the `rm` command (for *remove*) allows you to delete files and directories. Observe the result of the following commands:
 ```bash
 $ rm vie/bidule
 $ rm copies
@@ -138,9 +145,11 @@ $ rm -r copies
 $ rm -R copie_vie
 $ rm -i vie/arbres/bonjour.c vie/abeilles/truc.txt
 ```
-12. Delete all files and directories created during this exercise.
+12.  Delete all files and directories created during this exercise.
 
 ### Exercise 4 : Manipulating directories and files (2)
+
+Create the following tree structure. The `~` represents the user's home directory. Only `rapport.txt` and `index.html` are normal files, the others are all directories. The directories **Mail**, **Rapport** and **Web** directories will be created in a single command using `mkdir`.
 
 ```mermaid
 stateDiagram-v2
@@ -153,8 +162,6 @@ stateDiagram-v2
     Docs --> Fait
     Web --> index.html
 ```
-
-Create the following tree structure. The `~` represents the user's home directory. Only `rapport.txt` and `index.html` are normal files, the others are all directories. The directories **Mail**, **Rapport** and **Web** directories will be created in a single command using `mkdir`.
 
 Use the `touch` command to create the normal files and a text editor to give them some content.
 
