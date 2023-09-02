@@ -27,13 +27,6 @@ title: Lab1 - First commands
 
     Every single word in the command line is separated by one or more spaces. The shell interprets the spaces as separators between words. The shell interprets the newline character as the end of the command.
 
-
-
-
-
-
-
-
 1. Try out the following commands in a terminal. Describe in one sentence its usefulness, indicate the name of the command, its number of arguments and its arguments. For example, the first command is `date`, it has no argument and its usefulness is to display the current date and time.
 ```bash
 $ date
@@ -155,7 +148,7 @@ Create the following tree structure. The `~` represents the user's home director
 stateDiagram-v2
     ~ --> Mail
     ~ --> Rapport
-    ~ --> Web
+    ~ --> Webw
     Rapport --> rapport.txt
     Rapport --> Docs
     Docs --> Afaire
