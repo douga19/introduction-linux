@@ -27,13 +27,6 @@ title: Lab1 - First commands
 
     Every single word in the command line is separated by one or more spaces. The shell interprets the spaces as separators between words. The shell interprets the newline character as the end of the command.
 
-
-
-
-
-
-
-
 1. Try out the following commands in a terminal. Describe in one sentence its usefulness, indicate the name of the command, its number of arguments and its arguments. For example, the first command is `date`, it has no argument and its usefulness is to display the current date and time.
 ```bash
 $ date
@@ -61,12 +54,12 @@ $ echo       Hello,        world!
 
 1. Open a terminal and type the following command, respecting its syntax:
 ```bash
-PS1 = '$ '
+PS1='$ '
 ```
 2. Type the command `pwd` (for *print working directory*), that is, display the name of the current directory) and note what is printed on the screen: it is the absolute path of your *home*, personal directory.
-3. Type the command `cd ..` (with a space between `cd` and `..`) and then `pwd`. Repeat these two commands several times until the result remains the same. What happened ?
+3. Type the command `cd ..` (*change directory*, with a space between `cd` and `..`) and then `pwd`. Repeat these two commands several times until the result remains the same. What happened ?
 4. Type the command `cd` (without argument), then `pwd`. Comment.
-5. Type the command `cd /`, then `pwd` and `ls`.
+5. Type the command `cd /`, then `pwd` and `ls`. What is the `ls` command for ? 
 6. Type the command `cd /usr/include`. Use the command `ls`. What does this directory seem to be used for ?
 7. The `cat` command (for *concatenate*) displays one or more files given as arguments (one after the other) in the terminal. The `wc` command (for *word count*) displays (in this order) the number of lines, words and characters of the files given as arguments, then, if there are several, the sums of these numbers for all the files. Display the contents of the `stdlib.h` file and the number of lines of this file.
 8. Type the commands `cd ..`, `pwd` and `ls`.
@@ -76,6 +69,19 @@ PS1 = '$ '
 12. Represent the directories and files mentioned in the exercise as a tree (i.e. as a genealogical tree).
 
 ### Exercise 3 : Manipulating directories and files (1)
+
+!!! tip "Path acces"
+    
+    The acces to a resource (file or directory) is called a *path*. In this path, under Linux, the names of the directories and files are separated by a slash `/` (while we use a backslash `\` under Windows).
+
+    There exists two types of path : absolute and relative.
+
+    1. An *absolute* path is based on the root of the tree and starts with `/`, for example: `/home/debian` is the absolute path to the debian user's home directory. It remains valid regardless of the context.
+    2. A *relative* path is relative to the current directory. It does not start with `/` or `~`. For example, if the current directory is `/home/debian`, the relative path `./Documents` refers to the directory `/home/debian/Documents`. We use this type of path to indicate where the resources are relative to each other, independently of the root of the system.
+
+    The `.` references the current directory. The `..` references the parent directory.
+
+
 
 1. Make sure you are in your home directory and list its contents.
 2. Type the command `mkdir tp_shell` (for *make directory*, i.e. create a directory). List the contents of the home directory and the `tp_shell` directory.
@@ -97,7 +103,6 @@ $ ls a<Tab><Tab>
 $ rmdir vivant tp_shell/tp1/exos/ex1
 ```
 and then delete the subdirectory `tp1` from the directory `tp_shell`.
-
 8. The `touch` command allows (among other things) to create empty (normal) files. Observe the result of the command (executed from your home directory):
 ```bash
 $ touch ~/arbres/hello.c abeilles/truc.txt bidule
@@ -106,11 +111,6 @@ by typing
 ```bash    
 $ ls ~/arbres abeilles/ .
 ```
-!!! note "The dot `.`"
-        
-        `.` refers to the current directory.
-
-
 9. The `mv` command for *move*, allows you to move or rename files. Observe with `ls` the result of each of the following commands:
 ```bash
 $ mv arbres/hello.c arbres/bonjour.c
@@ -118,7 +118,7 @@ $ mv abeilles arbres vivant/
 $ mv bidule vivant
 $ mv vivant vie
 ```
-10.  The `cp` command for *copy*, allows you to copy files and directories. Observe the result of the following commands:
+10.   The `cp` command for *copy*, allows you to copy files and directories. Observe the result of the following commands:
 ```bash
 $ cp vie/arbres/bonjour.c salut.c
 $ mkdir copies
@@ -129,8 +129,7 @@ $ cp vie copie_vie
 $ cp -R vie copie_vie
 ```
 Describe the operation of the `cp` command, depending on whether its last argument is an existing directory or not and whether the `-R` option is present or not.        
-
-11. Finally, the `rm` command (for *remove*) allows you to delete files and directories. Observe the result of the following commands:
+11.  Finally, the `rm` command (for *remove*) allows you to delete files and directories. Observe the result of the following commands:
 ```bash
 $ rm vie/bidule
 $ rm copies
@@ -138,9 +137,11 @@ $ rm -r copies
 $ rm -R copie_vie
 $ rm -i vie/arbres/bonjour.c vie/abeilles/truc.txt
 ```
-12. Delete all files and directories created during this exercise.
+12.  Delete all files and directories created during this exercise.
 
 ### Exercise 4 : Manipulating directories and files (2)
+
+Create the following tree structure. The `~` represents the user's home directory. Only `rapport.txt` and `index.html` are normal files, the others are all directories. The directories **Mail**, **Rapport** and **Web** directories will be created in a single command using `mkdir`.
 
 ```mermaid
 stateDiagram-v2
@@ -153,8 +154,6 @@ stateDiagram-v2
     Docs --> Fait
     Web --> index.html
 ```
-
-Create the following tree structure. The `~` represents the user's home directory. Only `rapport.txt` and `index.html` are normal files, the others are all directories. The directories **Mail**, **Rapport** and **Web** directories will be created in a single command using `mkdir`.
 
 Use the `touch` command to create the normal files and a text editor to give them some content.
 
@@ -208,10 +207,7 @@ From your home directory, perform the following operations (there are several po
         $ man 1 printf
         $ man 3 printf
 
-6. Dans la page de manuel de mv, observer les deux premières lignes de la partie « SYNOP-
-SIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au
-manuel de man.
-In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part. Can you guess what do the brackets mean ? the three dots ? If necessary, refer to the `man` manual.
+6. In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part. Can you guess what do the brackets mean ? the three dots ? If necessary, refer to the `man` manual.
 
 ### Exercise 7 : Wildcards
 
@@ -223,9 +219,11 @@ In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part.
 
     There are several types of wildcards, but we will only use the most common ones: `*`, `?` and `[ ]`.
 
-    * `*` can represent a possibily empty string of characters, except if it is the first character of the string and the string starts with a dot (`.`) ;
+    * `*` can represent a possibily empty string of characters, except if it is the first character of the string and the string starts with a dot (`.`);
     
-    * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between `0` and `5`. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit.
+    * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between `0` and `5`. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit;
+
+    * `?` represents a any single character;
         
     * You may get further details in `man bash` at the Pathname Expansion section.
     
