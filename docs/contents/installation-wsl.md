@@ -27,8 +27,8 @@ In this tutorial we will see how you can directly have a Linux environment in Wi
 
 ### Browse the WSL files from Windows
 1. Open a file explorer from Windows.
-2. In the adress bar, type: `\\wls$`, then press enter.
->> Capture fenêtre
+2. In the adress bar, type: `\\wsl$`, then press enter.
+![WSL files](../../assets/img/wsl.png)
 3. From there, you will be able to access your personal directory by clicking on `home` then on the folder whose name is your `login`. 
 4. From now, you are able to retrieve your debian files from Windows.
 5. To test that everything is fine, in the debian terminal enter the following command: 
@@ -37,44 +37,12 @@ touch file.txt
 ```
 then from the Windows file explorer check that the file has been created in your personal directory (you may need to refresh the window with `F5`).
 6. Edit `file.txt` in a text editor from Windows, then save it.
->> Capture fenêtre
+![File editing](../../assets/img/fichier.png)
 7. Finally, go back to the debian terminal to check that the file has been modified. Type the command:
 ```bash
 cat file.txt
 ```
 8. You may observe a small problem with the end of lines, Windows and Unix manage them differently (we will talk about it later).
-
-### Install Debian packages with `apt`
-Most of the GNU/Linux distributions allow to install programs, libraries (set of programs), precompiled software by going through online *repositories*. The programs and libraries present in these repositories are called *packages*.
-
-The installation of these packages is performed by a ... *package manager*. Debian and its derivatives, the package manager is called `apt`.
-
-Since those packages are installed on the system, for all users, only the system administrator is allowed to install them, but you will be able to take this role.
-
-!!! note "`sudo` ?"
-    The `sudo` command allows you to execute the command that follows it as an administrator. You will be asked for your password (once per session).
-
-Let us install some packages.
-
-1. First, update the database and the already installed packages by typing in your Debian terminal:
-```bash
-sudo apt update
-sudo apt upgrade
-```
-This step may take more or less time depending on your internet connection.
-2. Once the updates are done, we will install 4 packages: the text editors `nano` and `vim`, the c compiler `gcc`, and a calandar app `ncal` with the following command:
-```bash
-sudo apt install nano vim gcc ncal
-```
-3. It is also possible to search for packages by name or keyword using the `search` action of the `apt` command.
-4. To remove / uninstall a package, use the `remove` action of the `apt` command:
-```bash
-sudo apt remove nano
-```
-5. Finally, some libraries become useless once the packages that used them are removed. The `autoremove` action allows you to clean up by uninstalling the libraries that have become useless.
-```bash
-sudo apt autoremove
-```
 
 ## Installation of UTM (for MacOS users)
 
