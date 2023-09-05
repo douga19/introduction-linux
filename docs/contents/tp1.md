@@ -81,8 +81,6 @@ PS1 = '$ '
 
     The `.` references the current directory. The `..` references the parent directory.
 
-    Le `.` fait référence au répertoire courant. Les `..` font référence au répertoire parent.
-
 1. Make sure you are in your home directory and list its contents.
 2. Type the command `mkdir tp_shell` (for *make directory*, i.e. create a directory). List the contents of the home directory and the `tp_shell` directory.
 3. Type the command `mkdir abeilles tp_shell/tp1 ~/arbres`. What did it do ? Among its arguments, which are absolute paths and which are relative paths ? (hint: see the result of `echo ~/arbres`).
@@ -208,10 +206,7 @@ From your home directory, perform the following operations (there are several po
         $ man 1 printf
         $ man 3 printf
 
-6. Dans la page de manuel de mv, observer les deux premières lignes de la partie « SYNOP-
-SIS ». Que signifient les crochets ? les points de suspension ? Si besoin, se reporter au
-manuel de man.
-In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part. Can you guess what do the brackets mean ? the three dots ? If necessary, refer to the `man` manual.
+6. In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part. Can you guess what do the brackets mean ? the three dots ? If necessary, refer to the manual pages of the command `man` .
 
 ### Exercise 7 : Wildcards
 
@@ -226,6 +221,8 @@ In the manual pages of `mv`, observe the first two lines of the `SYNOPSIS` part.
     * `*` can represent a possibily empty string of characters, except if it is the first character of the string and the string starts with a dot (`.`) ;
     
     * `[ ]` represents a single character that is in the range of characters specified between the brackets. You can use intervals, like in `[a-z]` which represents a single lowercase letter or in `[0-5]` which represents a single digit between `0` and `5`. You can invert the search by starting the interval with `^`: for instance `[^0-9]` represents a single character that is anything but a digit.
+
+    * `?` represents a single character, except if it is the first character of the string and the string starts with a dot (`.`).
         
     * You may get further details in `man bash` at the Pathname Expansion section.
     
