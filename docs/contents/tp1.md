@@ -146,7 +146,7 @@ Create the following tree structure. The `~` represents the user's home director
 stateDiagram-v2
     ~ --> Mail
     ~ --> Rapport
-    ~ --> Webw
+    ~ --> Web
     Rapport --> rapport.txt
     Rapport --> Docs
     Docs --> Afaire
