@@ -26,15 +26,15 @@ This module will be taught in 15 hours as a Lab/Lecture sessions.
 | Group     | Teacher                   | Contact    |
 |-----------|---------------------------|------------|
 | A         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net           |
-| B         |                           |        |
-| C         |                           |        |
+| B         | Halim Djerroud            | halim.djerroud@intervenants.efrei.net       |
+| C         | Borhene Eddine Dakkar     | borhen-eddine.dakkar@intervenants.efrei.net       |
 | D         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net       |
 | E         |                           |        |
 | F         | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
 | P         | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | BN        | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | BDX       | John Dreyfus              | john.dreyfus@intervenants.efrei.net       |
-| INT1      |                           |        |
+| INT1      | Rostom Kachouri           | rostom.kachouri@intervenants.efrei.net        |
 | INT2      | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | INT3      | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
 
@@ -44,7 +44,7 @@ This module will be taught in 15 hours as a Lab/Lecture sessions.
 1. [Get yourself a Linux environment](./contents/installation-wsl.md)
 2. [Preliminary reading](./contents/preliminary-reading.md)
 3. [Lab1 - First commands](./contents/tp1.md)
-4. [Lab2 - File System and permissions](#) (to come)
+4. [Lab2 - File System and permissions](./contents/tp2.md)
 5. [Lab3 - Working environment](#) (to come)
 6. [Lab4 - File descriptors, pipes and tube](#) (to come)
 7. [Lab5 - Processes management](#) (to come)
