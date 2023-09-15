@@ -29,7 +29,7 @@ This module will be taught in 15 hours as a Lab/Lecture sessions.
 | B         | Halim Djerroud            | halim.djerroud@intervenants.efrei.net       |
 | C         | Borhene Eddine Dakkar     | borhen-eddine.dakkar@intervenants.efrei.net       |
 | D         | Zouhour Guiras            | zouhour.guiras@intervenants.efrei.net       |
-| E         |                           |        |
+| E         | Mourad Kmimech            | mourad.kmimech@efrei.fr       |
 | F         | Rado Rakotonarivo         | rado.rakotonarivo@efrei.fr       |
 | P         | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
 | BN        | Nathalie Xiaodan Chin     | nathalie.xiaodan-chin@intervenants.efrei.net       |
@@ -45,6 +45,6 @@ This module will be taught in 15 hours as a Lab/Lecture sessions.
 2. [Preliminary reading](./contents/preliminary-reading.md)
 3. [Lab1 - First commands](./contents/tp1.md)
 4. [Lab2 - File System and permissions](./contents/tp2.md)
-5. [Lab3 - Working environment](#) (to come)
-6. [Lab4 - File descriptors, pipes and tube](#) (to come)
+5. [Lab3 - Working environment](./contents/tp3.md)
+6. [Lab4 - Text filters, pipes and redirections](#) (to come)
 7. [Lab5 - Processes management](#) (to come)
