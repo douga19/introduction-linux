@@ -138,7 +138,7 @@ $ echo "\\\\\"\$\`\*\'"
 ```
 2. Try those commands on a terminal and note their results:
 ```bash
-$ myvar ="Alice<newline> and<newline>Bob"
+$ myvar="Alice<newline> and<newline>Bob"
 $ echo $myvar are doing a lot of things
 $ echo "$myvar are doing a lot of things"
 ```
