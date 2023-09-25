@@ -35,7 +35,7 @@ title: Lab4 - Text filters, redirection and pipes
     $ echo "Am I on the terminal?"
     $ echo "Or in the file?" > file.txt
     $ cat file.txt
-    $ cat "And me?" > file.txt
+    $ echo "And me?" > file.txt
     $ cat file.txt
     $ echo "I don't want to empty the file" >> file.txt
     $ cat file.txt
