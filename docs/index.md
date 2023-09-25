@@ -46,5 +46,5 @@ This module will be taught in 15 hours as a Lab/Lecture sessions.
 3. [Lab1 - First commands](./contents/tp1.md)
 4. [Lab2 - File System and permissions](./contents/tp2.md)
 5. [Lab3 - Working environment](./contents/tp3.md)
-6. [Lab4 - Text filters, pipes and redirections](#) (to come)
+6. [Lab4 - Text filters, redirections and pipes](./contents/tp4.md)
 7. [Lab5 - Processes management](#) (to come)
