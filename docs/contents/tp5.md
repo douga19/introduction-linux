@@ -292,7 +292,7 @@ $ tar -xvf dir.tar
         - If you already have an `a.out` file in your directory, it will be overwritten by the `gcc hello.c` command.
         - `a.out` is the default name of the executable created by `gcc`. You can change this name by using the `-o` option of `gcc`. For example, `gcc hello.c -o hello` will create an executable `hello` instead of `a.out`.
   
-3. Then download this archive [hello.tar.gz](/assets/files/hello.tar.gz).
+3. Then download this archive [hello.tar.gz](../../assets/files/hello.tar.gz).
 4. Extract the files from this archive and move into the `hello` directory.
 5. Type the command 
 ```bash
